@@ -9,7 +9,13 @@ const express = require('express');
 const router  = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('users');
-}); 
+  const hardCodedUsers = [
+    {name: 'Saul Hudson', website: 'slash.com', password: 'password'},
+    {name: 'Axl Rose',    website: 'alx.com',   password: 'password'},
+    {name: 'Saul Hudson', website: 'slash.com', password: 'password'}
+  ];
+  res.json(hardCodedUsers);
+  // res.render('users');
+});
 
 module.exports = router;

@@ -2,23 +2,51 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
+  <!-- Meta Information -->
+  <title>VaultPass - Home Page</title>
 
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- External CSS -->
+
+  <!-- Fonts -------------------------------------------------------->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Spice&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+
+  <!-- NAV CSS -->
+  <link rel="stylesheet" href="/styles/nav.css">
+  <link rel="stylesheet" href="/styles/vaultPasses.css">
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
 
+  <!--- App JS --->
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
+  <script defer src="/scripts/users.js"></script>
 </head>
 
+
 <body>
-  <h1>Have fun! 🥔</h1>
+  <nav>
+    <%- include('partials/_header') %>
+      <span class="vaultPass-header">VaultPass</span>
+      <div class="username-head">USERNAME</div>
+      <div class="logout-button">
+        <button class="logout-button" type="submit">Logout</button>
+      </div>
+  </nav>
+  <main class="website-list">
+    <h3 class="website-head">Your vaultPasses</h3>
+    <ul id="users"></ul>
+
+  </main>
 </body>
 
 </html>
