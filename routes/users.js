@@ -7,15 +7,17 @@
 
 const express = require('express');
 const router  = express.Router();
+const helpers = require('../db/queries/helpers');
 
 router.get('/', (req, res) => {
-  const hardCodedUsers = [
-    {name: 'Saul Hudson', website: 'slash.com', password: 'password'},
-    {name: 'Axl Rose',    website: 'alx.com',   password: 'password'},
-    {name: 'Saul Hudson', website: 'slash.com', password: 'password'}
-  ];
-  res.json(hardCodedUsers);
-  // res.render('users');
+  // const hardCodedUsers = [
+  //   {name: 'Saul Hudson', website: 'slash.com', password: 'password'},
+  //   {name: 'Axl Rose',    website: 'alx.com',   password: 'password'},
+  //   {name: 'Saul Hudson', website: 'slash.com', password: 'password'}
+  // ];
+  helpers.getPasswordByUserId(5).then(users => {
+    res.json(users);
+  });// call res.render when ready
 });
 
 module.exports = router;
