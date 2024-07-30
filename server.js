@@ -38,6 +38,16 @@ const usersRoutes = require('./routes/users');
 // app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+
+const user = {
+  name: 'Timmy',
+  isLoggedIn: true
+};
+
+app.use((req, res, next) => {
+  res.locals.user = user.isLoggedIn ? user : null;
+  next();
+});
 // Note: mount other resources here, using the same pattern above
 
 // Home page
