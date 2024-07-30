@@ -21,17 +21,16 @@ const getPasswordByUserId = function(id) {
     });
 };
 
-// Random Password Generator Function
-const randomPassGenerator = function() {
-  const lower = 'abcdefghijklmnopqrstuvwxyz';
-  const upper = lower.toUpperCase();
-  // concat the chars
-  const chars = lower + upper;
-  // return using Array.from setting the array to 8
-  return Array.from({length: 8}, () =>
-    chars[Math.floor(Math.random() * chars.length)]).join('');
-};
 
-console.log(randomPassGenerator());
+// Generate Random String as Password
+function generatePassword() {
+  const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&(){}';
+  let randomString = '';
+  for (let i = 16; i > 0; --i) {
+    randomString += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return randomString;
+}
+
 
 module.exports = { getUsers, getPasswordByUserId };
