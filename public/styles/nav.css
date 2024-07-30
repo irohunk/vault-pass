@@ -1,0 +1,23 @@
+nav {
+  position: fixed;
+  display: flex;
+  top: 25px;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.vaultPass-header {
+  font-family: 'Bungee spice';
+  font-size: 31px;
+  padding-left: 1.1em;
+}
+
+.username-head {
+  align-self: center;
+  margin-right: 7.1em;
+}
+
+.logout-button {
+  margin-right: 1.1em;
+}
