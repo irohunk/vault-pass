@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
   // use helper functions to get pass by ID
   helpers.getPasswordByUserId()
     .then(vaultPasses => {
-      res.render('vaultPasses', { vaultPasses: vaultPasses, user: res.locals.user });
+      res.render('new-pass', { vaultPasses: vaultPasses, user: res.locals.user });
     })
     .catch(err => {
       res

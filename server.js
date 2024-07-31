@@ -32,7 +32,7 @@ app.use(express.static('public'));
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const websiteRoutes = require('./routes/website');
-const vaultPassesRoutes = require('./routes/vault-passes');
+const vaultPassesRoutes = require('./routes/new-pass');//newvaultpass-page
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -41,7 +41,7 @@ const vaultPassesRoutes = require('./routes/vault-passes');
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/website', websiteRoutes);// added middleware
-app.use('/vault-passes', vaultPassesRoutes);
+app.use('/new-pass', vaultPassesRoutes);
 
 const user = {
   name: 'Timmy',

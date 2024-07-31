@@ -11,11 +11,6 @@ const helpers = require('../db/queries/helpers');
 const sequelize = require('sequelize');
 
 router.get('/', (req, res) => {
-  // const hardCodedUsers = [
-  //   {name: 'Saul Hudson', website: 'slash.com', password: 'password'},
-  //   {name: 'Axl Rose',    website: 'alx.com',   password: 'password'},
-  //   {name: 'Saul Hudson', website: 'slash.com', password: 'password'}
-  // ];
   helpers.getPasswordByUserId(5).then(users => {
     res.json(users);
   });// call res.render when ready
@@ -36,12 +31,12 @@ router.get('/', (req, res) => {
 //   }
 // });
 
-router.get('/websites', async (req, res) => {
+router.get('/websites', async(req, res) => {
   const vaults = await Vault.findAll();
   res.render('websites', { vaults });
 });
 
-router.post('/websites', async (req, res) => {
+router.post('/websites', async(req, res) => {
   const { websiteUrl, username, password } = req.body;
   await Vault.create({ websiteUrl, username, password });
   res.redirect('/websites');
