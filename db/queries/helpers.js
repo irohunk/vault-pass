@@ -17,6 +17,21 @@ const getPasswordByUserId = function(id) {
   `;
   return db.query(query, [id])
     .then(data => {
+      res.json(data.rows[0]);
+    })
+    .catch(error => {
+      console.log("error", error);
+    });
+};
+// add new vaultPass
+
+const addNewVaultPass = (user_id, org_id, url, username, password) => {
+  const query = `
+  INSERT INTO websites (user_id, org_id, url, username, password)
+  VALUES ($1, $2, $3, $4, $5)
+  `;
+  return db.query(query, [user_id, org_id, url, username, password])
+    .then(data => {
       return data.rows;
     });
 };
@@ -33,4 +48,4 @@ function generatePassword() {
 }
 
 
-module.exports = { getUsers, getPasswordByUserId };
+module.exports = { getUsers, getPasswordByUserId, addNewVaultPass };

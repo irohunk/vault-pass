@@ -44,3 +44,7 @@ INSERT INTO websites (id, user_id, org_id, url, username, password) VALUES
 (4, 22, 2, 'https://edutechpioneers.com', 'sandra_website', 'sandra_web_password'),
 (5, 18, 8, 'https://financegurus.com', 'elizabeth_website', 'elizabeth_web_password'),
 (6, 18, 8, 'https://financegurus.com', 'please_work', 'elizabeth_web_password');
+
+ALTER SEQUENCE websites_id_seq RESTART WITH 10;
+ALTER SEQUENCE organizations_id_seq RESTART WITH 20;
+ALTER SEQUENCE users_id_seq RESTART WITH 50;
