@@ -11,7 +11,7 @@
   - sites can be categoried, to, social (fb, linkedin), work related (bamboo, harvest), entertainment (snapchat, reddit), etc, etc
 
 
-### PAGES
+## PAGES
 
   #### MAIN PAGE
         CATEGORIES
@@ -44,10 +44,26 @@
 
 
 
-
-
 ## ROUTES
 
+  GET/POST ROUTE FOR EDIT WHEN CLICKED ON CARD - WEBSITES TABLE
+  GET/POST ROUTE FOR DELETE (MAIN) - WEBSITES
+  GET/POST ROUTE TO ADD A WEBSITE - WEBSITES TABLE
+  GET/POST ROUTE FOR CATEGORIES BUTTONS (ALL, SOCIAL, WORK RELATED, ENTERTAINMENT) - WEBSITES TABLE
+  GET/POST ROUTE COPY BUTTONS FOR username & password
+  GET/POST ROUTE FOR redirect button FOR URL
+
+  GET/POST ROUTE modify website_url, username, password text field
+  GET/POST ROUTE generate random password BUTTON 
+  GET/POST ROUTE dopdown menu change for CATEGORIES
+  GET/POST ROUTE submit BUTTON
+  GET/POST ROUTE cancel BUTTON
+
+
+  TEXT FIELD GET/POST ROUTE for new website (website_url, username, password)
+  GET/POST ROUTE generate random password BUTTON
+  GET/POST ROUTE dopdown menu for CATEGORIES (SOCIAL, WORK RELATED, ENTERTAINMENT)
+  
 
 
 Password generation based on criteria: This feature is not yet implemented in the provided code snippets.
@@ -57,3 +73,20 @@ User can edit and change their password: The database structure supports this, b
 Copy to clipboard button: This feature is not yet implemented in the provided front-end code.
 
 Site categorization: The current schema doesn't explicitly support categories, but this could be easily added as a new column or table.
+
+CLINT: 
+  TEXT FIELD GET/POST ROUTE for new website (website_url, username, password)
+
+
+MATHEW:   
+  GET/POST ROUTE FOR EDIT WHEN CLICKED ON CARD - WEBSITES TABLE
+  GET/POST ROUTE FOR DELETE (MAIN) - WEBSITES
+  GET/POST ROUTE TO ADD A WEBSITE - WEBSITES TABLE
+  GET/POST ROUTE FOR CATEGORIES BUTTONS (ALL, SOCIAL, WORK RELATED, ENTERTAINMENT) - WEBSITES TABLE
+
+ROHAN:    
+  GET/POST ROUTE modify website_url, username, password text field
+  GET/POST ROUTE generate random password BUTTON 
+  GET/POST ROUTE dopdown menu change for CATEGORIES
+  GET/POST ROUTE submit BUTTON
+  GET/POST ROUTE cancel BUTTON
