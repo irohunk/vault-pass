@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Vault</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+  <%- include('_header') %>
+  <div class="container mt-5">
+    <h1>Edit Vault</h1>
+    <form action="/edit/<%= website.id %>" method="POST">
+      <div class="form-group">
+        <label for="websiteUrl">Website URL</label>
+        <input type="url" class="form-control" id="websiteUrl" name="websiteUrl" value="<%= website.websiteUrl %>" required>
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" value="<%= website.username %>" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" value="<%= website.password %>" required>
+      </div>
+      <button type="submit" class="btn btn-success">Update</button>
+    </form>
+  </div>
+</body>
+</html>
