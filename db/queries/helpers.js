@@ -7,6 +7,32 @@ const getUsers = () => {
     });
 };
 
+const getPasswordById = function(id) {
+  const query = `
+  SELECT * FROM websites
+  WHERE id = $1;
+  `;
+  return db.query(query, [id])
+    .then(data => {
+      return (data.rows[0]);
+    })
+    .catch(error => {
+      console.log("error", error);
+    });
+};
+
+const editVaultPass = (newUrl, newUsername, newPassword, id) => {
+  console.log(newUrl, newUsername, newPassword, id);
+  const query = `
+  UPDATE websites
+  SET url = $1, username = $2, password = $3
+  WHERE websites.id = $4`
+  ;
+  return db.query(query, [newUrl, newUsername, newPassword, id])
+    .then(data => {
+      return data.rows;
+    });
+};
 const getPasswordByUserId = function(id) {
   const query = `
   SELECT *
@@ -49,4 +75,4 @@ function generatePassword() {
 }
 
 
-module.exports = { getUsers, getPasswordByUserId, addNewVaultPass };
+module.exports = { getUsers, getPasswordByUserId, addNewVaultPass, generatePassword, getPasswordById, editVaultPass };

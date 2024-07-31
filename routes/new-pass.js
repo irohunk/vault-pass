@@ -38,4 +38,31 @@ router.post('/', (req, res) => {
     });
 });
 
+router.get('/:id/edit', (req, res) => {
+  const passId = req.params.id;
+  helpers.getPasswordById(passId)
+    .then(existingPassword => {
+      console.log('existing password', existingPassword);
+      res.render('edit-pass', {existingPassword, user:null});
+
+    });
+});
+
+router.post('/:id/edit', (req, res) => {
+  const editId = req.params.id;
+  const {url, username, password } = req.body;
+  console.log(req.body);
+
+
+  helpers.editVaultPass(url, username, password, editId)
+    .then(newVaultPass => {
+      res.json({message: 'vaultPass edited!', newVaultPass});
+    })
+    .catch(err => {
+      console.log(err);
+      res
+        .status(205)
+        .json({ error: err.message });
+    });
+});
 module.exports = router;

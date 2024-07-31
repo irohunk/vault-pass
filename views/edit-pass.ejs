@@ -45,10 +45,10 @@
   </main>
   <section>
     <div>
-      <form id="new-pass" class="new-vaultpass" action="/new-pass" method="POST">
-        <input type="text" name="url" placeholder="Website URL">
-        <input type="text" name="username" placeholder="Username">
-        <input type="text" name="password" placeholder="Password">
+      <form id="edit-pass" class="new-vaultpass" action="/new-pass/<%= existingPassword.id %>/edit" method="POST">
+        <input value="<%= existingPassword.url %>" type="text" name="url" placeholder="Website URL">
+        <input value="<%= existingPassword.username %>" type="text" name="username" placeholder="Username">
+        <input value="<%= existingPassword.password %>" type="text" name="password" placeholder="Password">
         <button class="new-entry" type="submit">Create new VaultPass</button>
       </form>
       <div>
