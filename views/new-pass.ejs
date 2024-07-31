@@ -33,24 +33,19 @@
   <script defer src="/scripts/users.js"></script>
 </head>
 
-
 <body>
   <nav>
-    <%- include('partials/_header') %>
-      <span class="vaultPass-header">VaultPass</span>
-      <div class="username-head">USERNAME</div>
-      <div class="logout-button">
-        <button class="logout-button" type="submit">Logout</button>
-      </div>
+    <!-- <%- include('partials/_header') %> -->
+    <span class="vaultPass-header">VaultPass</span>
+    <div class="username-head">USERNAME</div>
+    <div class="logout-button">
+      <button class="logout-button" type="submit">Logout</button>
+    </div>
   </nav>
-  <main class="website-list">
-    <h3 class="website-head">Your vaultPasses</h3>
-
-    <ul id="users"></ul>
   </main>
   <section>
     <div>
-      <form class="new-vaultpass" action="/website" method="POST">
+      <form class="new-vaultpass" action="/new-pass" method="POST">
         <input type="text" name="url" placeholder="Website URL">
         <input type="text" name="username" placeholder="Username">
         <input type="teixt" name="password" placeholder="Password">
