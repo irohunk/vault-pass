@@ -23,11 +23,13 @@ router.get('/', (req, res) => {
 // POST route to create new vault pass
 router.post('/', (req, res) => {
   const {url, username, password } = req.body;
-  const user_id = res.locals.user.id;
+  console.log(req.body);
+  const user_id = 1;
+  const org_id = 1;
 
   helpers.addNewVaultPass(user_id, org_id, url, username, password)
     .then(newVaultPass => {
-      res.json;
+      res.json({message: 'vaultPass created!', newVaultPass});
     })
     .catch(err => {
       res

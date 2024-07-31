@@ -8,8 +8,8 @@
 const express = require('express');
 const router  = express.Router();
 const helpers = require('../db/queries/helpers');
-const sequelize = require('sequelize');
-const sequelize = require('sequelize');
+// const sequelize = require('sequelize');
+// const sequelize = require('sequelize');
 
 router.get('/', (req, res) => {
   helpers.getPasswordByUserId(5).then(users => {
@@ -32,12 +32,12 @@ router.get('/', (req, res) => {
 //   }
 // });
 
-router.get('/websites', async (req, res) => {
+router.get('/websites', async(req, res) => {
   const vaults = await Vault.findAll();
   res.render('websites', { vaults });
 });
 
-router.post('/websites', async (req, res) => {
+router.post('/websites', async(req, res) => {
   const { websiteUrl, username, password } = req.body;
   await Vault.create({ websiteUrl, username, password });
   res.redirect('/websites');

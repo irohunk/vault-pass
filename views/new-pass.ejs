@@ -29,8 +29,7 @@
 
   <!--- App JS --->
   <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/app.js"></script>
-  <script defer src="/scripts/users.js"></script>
+  <script defer src="/scripts/add-website.js"></script>
 </head>
 
 <body>
@@ -45,10 +44,10 @@
   </main>
   <section>
     <div>
-      <form class="new-vaultpass" action="/new-pass" method="POST">
+      <form id="new-pass" class="new-vaultpass" action="/new-pass" method="POST">
         <input type="text" name="url" placeholder="Website URL">
         <input type="text" name="username" placeholder="Username">
-        <input type="teixt" name="password" placeholder="Password">
+        <input type="text" name="password" placeholder="Password">
         <button class="new-entry" type="submit">Create new VaultPass</button>
       </form>
     </div>

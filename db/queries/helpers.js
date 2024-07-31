@@ -29,10 +29,11 @@ const addNewVaultPass = (user_id, org_id, url, username, password) => {
   const query = `
   INSERT INTO websites (user_id, org_id, url, username, password)
   VALUES ($1, $2, $3, $4, $5)
+  RETURNING *
   `;
   return db.query(query, [user_id, org_id, url, username, password])
     .then(data => {
-      return data.rows;
+      return data.rows[0];
     });
 };
 
