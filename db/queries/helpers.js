@@ -21,14 +21,14 @@ const getPasswordById = function(id) {
     });
 };
 
-const editVaultPass = (newUrl, newUsername, newPassword, id) => {
-  console.log(newUrl, newUsername, newPassword, id);
+const editVaultPass = (newUrl, newUsername, newPassword, newCategory, id) => {
+  console.log(newUrl, newUsername, newPassword, newCategory, id);
   const query = `
   UPDATE websites
-  SET url = $1, username = $2, password = $3
-  WHERE websites.id = $4`
+  SET url = $1, username = $2, password = $3, category = $4
+  WHERE websites.id = $5`
   ;
-  return db.query(query, [newUrl, newUsername, newPassword, id])
+  return db.query(query, [newUrl, newUsername, newPassword, newCategory, id])
     .then(data => {
       return data.rows;
     });
@@ -43,7 +43,7 @@ const getPasswordByUserId = function(id) {
   `;
   return db.query(query, [id])
     .then(data => {
-      return (data.rows);
+      return data.rows[0];
     })
     .catch(error => {
       console.log("error", error);
