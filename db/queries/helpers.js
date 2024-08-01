@@ -51,13 +51,13 @@ const getPasswordByUserId = function(id) {
 };
 // add new vaultPass
 
-const addNewVaultPass = (user_id, org_id, url, username, password) => {
+const addNewVaultPass = (user_id, org_id, url, username, password, category) => {
   const query = `
-  INSERT INTO websites (user_id, org_id, url, username, password)
-  VALUES ($1, $2, $3, $4, $5)
+  INSERT INTO websites (user_id, org_id, url, username, password, category)
+  VALUES ($1, $2, $3, $4, $5, $6)
   RETURNING *
   `;
-  return db.query(query, [user_id, org_id, url, username, password])
+  return db.query(query, [user_id, org_id, url, username, password, category])
     .then(data => {
       return data.rows[0];
     });

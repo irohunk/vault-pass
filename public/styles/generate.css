@@ -23,3 +23,12 @@ p {
   display: flex;
   justify-content: center;
 }
+
+select#categories.dropdown-toggle {
+  font-family: 'Bungee Spice', sans-serif;
+  margin-top: 1.1em;
+}
+
+label {
+  font-family: 'Bungee Spice', sans-serif;
+}

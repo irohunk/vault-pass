@@ -2,14 +2,15 @@ $(document).ready(function() {
   // create the dropdown menu
   const dropdownHtml = `
  <div class="dropdown">
-  <button class="dropdown-toggle">Catagories</button>
-  <ul class="drop-menu">
-    <li><a href="#">Option 1</a></li>
-    <li><a href="#">Option 2</a></li>
-    <li><a href="#">Option 3</a></li>
-  </ul>
+     <label for="categories">Choose a category:</label>
+  <select name="category" id="category" class="dropdown-toggle">
+    <option value="Social">       Social</option>
+    <option value="Work-related"> Work-related</option>
+    <option value="Entertainment">Entertainment</option>
+  </select>
 </div>
   `;
+
 
   // add the dropdown to a container
   $('#dropdownContainer').append(dropdownHtml);
@@ -28,3 +29,4 @@ $(document).ready(function() {
     }
   });
 });
+

@@ -3,8 +3,9 @@ $(document).ready(function() {
     event.preventDefault();
     // console.log('Form submitted');
 
-    // console.log(event.target.elements);
+    console.log(event.target.elements);
     const {url, username, password} = event.target.elements;
+    const category = $('#category').val();
     // console.log(url.value);
 
     // check if the fields are MT
@@ -17,6 +18,7 @@ $(document).ready(function() {
       url: url.value,
       username: username.value,
       password: password.value,
+      category: category
     };
     // console.log(data);
 

@@ -22,12 +22,12 @@ router.get('/', (req, res) => {
 
 // POST route to create new vault pass
 router.post('/', (req, res) => {
-  const {url, username, password } = req.body;
+  const {url, username, password, category } = req.body;
   console.log(req.body);
-  const user_id = 1;
+  const user_id = req.cookies.userId;
   const org_id = 1;
 
-  helpers.addNewVaultPass(user_id, org_id, url, username, password)
+  helpers.addNewVaultPass(user_id, org_id, url, username, password, category)
     .then(newVaultPass => {
       res.json({message: 'vaultPass created!', newVaultPass});
     })
@@ -35,6 +35,7 @@ router.post('/', (req, res) => {
       res
         .status(500)
         .json({ error: err.message });
+      console.log(err);
     });
 });
 

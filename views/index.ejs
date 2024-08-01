@@ -74,21 +74,27 @@
                 <h5 class="card-title">
                   <%= vault.url %>
                 </h5>
-                <p class="card-text">Username: <%= vault.username %>
-                </p>
+                <label class="card-text">Username:</label>
+                <input id="username" class="username" value="<%= vault.username %>" disabled />
+                <label class="card-text">Password:</label>
+                <input type="password" class="password" value="<%= vault.password %>" disabled />
+
+
 
                 <!-- Form to edit the website, redirects to POST /edit/:id -->
                 <form action="/edit/<%= vault.id %>" method="POST">
                   <button type="submit" class="btn btn-primary">Edit</button>
                 </form>
                 <!-- Create redirect button for homepage -->
-                <button id="createBtn">Create</button>
-                <button type="button" id="copy-url">Copy</button>
+
+                <button type="button" class="copy-username" id="copy-url">Copy username</button>
+                <button type="button" class="copy-password">Copy password</button>
               </div>
             </div>
           </div>
           <% }) %> <!-- End of the loop -->
       </div>
+      <button id="createBtn">Create</button>
     </div>
   </section>
 </body>
