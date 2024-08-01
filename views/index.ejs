@@ -44,23 +44,25 @@
       </div>
   </nav>
   <main class="website-list">
-    <h3 class="website-head">Your vaultPasses</h3>
+    <!-- <h3 class="website-head">Your vaultPasses</h3> -->
 
     <ul id="users"></ul>
   </main>
   <section>
     <div>
-      <form class="new-vaultpass" action="/website" method="POST">
-        <input type="text" name="url" placeholder="Website URL">
-        <input type="text" name="username" placeholder="Username">
-        <input type="teixt" name="password" placeholder="Password">
-        <button class="new-entry" type="submit">Create new VaultPass</button>
-      </form>
+        <!-- CATEGORIES GOES HERE -->
+
     </div>
     <!-- Displaying the list of websites (vaults) -->
     <div class="container mt-5">
       <h1>My Vaults</h1>
       <div class="row">
+        <div>
+          <a href="/">View All</a>
+          <a href="/?category=Social">Social</a>
+          <a href="/?category=Entertainment">Entertainment</a>
+          <a href="/?category=Work-related">Work Related</a>
+        </div>
         <!-- Loop through the 'website' array passed from the server -->
         <% website.forEach(vault => { %> <!-- 'website' is the array from the server -->
           <div class="col-md-4">

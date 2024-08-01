@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const {getWebsiteById, getWebsiteByUserId, deleteWebsiteById} = require('../db/queries/dashboardHelpers');
+const {getWebsiteById, getWebsiteByUserId, deleteWebsiteById, sortByUserByCategories} = require('../db/queries/dashboardHelpers');
+const db = require('../db/connection');
 
 
 router.post('/', (req, res) => {
@@ -10,6 +11,17 @@ router.post('/', (req, res) => {
   if (!userId) {
     return res.status(400).send('User not logged in');
   }
+  
+  // const categoriy = req.body.category || null;
+  
+  // sortByUserByCategories(userId, category)
+  // .then(websites => {
+  //   res.render('index', { website: websites, user: null });
+  // })
+  // .catch(error => {
+  //   console.error('Error fetching websites:', error);
+  //   res.status(500).send('Server error');
+  // });
 
   getWebsiteByUserId(userId)
   .then(websites => {
@@ -25,7 +37,7 @@ router.post('/', (req, res) => {
     console.error('Error fetching websites:', error);
     res.status(500).send('Server error');
   });
-})
+});
 
 router.post('/:id/delete', (req, res) => {
   const websiteId = req.params.id;
@@ -41,21 +53,49 @@ router.post('/:id/delete', (req, res) => {
 });
 
 // route to get websites for a specific user and to throw it onto the main page
+// router.get('/', (req, res) => {
+//   const userId = req.cookies.userId;
+//   console.log('User ID:', userId); // Log the user ID to ensure it's set
+
+//   if (!userId) {
+//     return res.status(400).send('User not logged in');
+//   }
+
+//   getWebsiteByUserId(userId)
+//     .then(websites => {
+//       console.log('Websites:', websites); // Log the data to see what’s being passed
+//       res.render('index', { website: websites, user: null });
+//     })
+//     .catch(error => {
+//       console.error('Error fetching websites:', error);
+//       res.status(500).send('Server error');
+//     });
+// });
+
 router.get('/', (req, res) => {
   const userId = req.cookies.userId;
-  console.log('User ID:', userId); // Log the user ID to ensure it's set
+  const category = req.query.category || null;
+  console.log("HEEEEEY OLA HI! -=-----------------------------------!!!");
 
   if (!userId) {
     return res.status(400).send('User not logged in');
   }
 
-  getWebsiteByUserId(userId)
-    .then(websites => {
-      console.log('Websites:', websites); // Log the data to see what’s being passed
-      res.render('index', { website: websites, user: null });
+  db.query('SELECT DISTINCT category FROM websites WHERE user_id = $1', [userId])
+    .then(categoriesData => {
+      const categories = categoriesData.rows.map(cat => cat.category);
+
+      sortByUserByCategories(userId, category)
+        .then(websites => {
+          res.render('index', {website: websites, categories: categories, user: null});
+        })
+        .catch(error => {
+          console.log('Error fetching websites:', error);
+          res.status(500).send('Server error');
+        });
     })
     .catch(error => {
-      console.error('Error fetching websites:', error);
+      console.error('Error fetching categories:', error);
       res.status(500).send('Server error');
     });
 });

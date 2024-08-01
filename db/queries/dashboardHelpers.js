@@ -48,5 +48,28 @@ const deleteWebsiteById = (id) => {
     });
 };
 
+const sortByUserByCategories = (userId, category) => {
+  const queryParams = [userId];
+  let query = `
+  SELECT *
+  FROM websites
+  WHERE websites.user_id = $1
+  `;
 
-module.exports = { getWebsiteById, getWebsiteByUserId, deleteWebsiteById }
+  if (category) {
+    query += ` AND websites.category = $2`;
+    queryParams.push(category);
+  }
+
+  return db.query(query, queryParams)
+    .then(data => {
+      return data.rows;
+    })
+    .catch(error => {
+      console.log('Error fetching websites by user and category:', error);
+      throw error;
+    });
+  
+};
+
+module.exports = { getWebsiteById, getWebsiteByUserId, deleteWebsiteById, sortByUserByCategories }

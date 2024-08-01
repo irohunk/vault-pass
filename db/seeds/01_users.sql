@@ -8,10 +8,10 @@ INSERT INTO organizations (id, name, city, street, country, postal) VALUES
 (7, 'Global Logistics Co.', 'Singapore', '404 Trade Ln', 'Singapore', '049319'),
 (8, 'Sustainable Energy Corp.', 'Copenhagen', '505 Eco Blvd', 'Denmark', '2100');
 
-INSERT INTO categories (id, cat_name) VALUES
-(1, 'Work Related'),
-(2, 'Social'),
-(3, 'Entertainment');
+-- INSERT INTO categories (id, cat_name) VALUES
+-- (1, 'Work Related'),
+-- (2, 'Social'),
+-- (3, 'Entertainment');
 
 INSERT INTO users (id, name, org_id, is_admin, login_username, login_password) VALUES
 (1, 'Paul', 5, 1, 'paul_username', 'paul_password'),
@@ -42,17 +42,31 @@ INSERT INTO users (id, name, org_id, is_admin, login_username, login_password) V
 
 
 
-INSERT INTO websites (id, user_id, org_id, cat_id, url, username, password) VALUES
-(1, 10, 5, 1, 'https://techinnovators.com', 'linda_website', 'linda_web_password'),
-(2, 15, 3, 2, 'https://greensolutions.com', 'joseph_website', 'joseph_web_password'),
-(3, 7, 7, 3, 'https://healthcareheroes.com', 'michael_website', 'michael_web_password'),
-(4, 22, 2, 2, 'https://edutechpioneers.com', 'sandra_website', 'sandra_web_password'),
-(5, 18, 8, 3, 'https://financegurus.com', 'elizabeth_website', 'elizabeth_web_password'),
-(6, 18, 8, 1, 'https://financegurus.com', 'please_work', 'elizabeth_web_password');
+INSERT INTO websites (id, user_id, org_id, category, url, username, password) VALUES 
+(1, 10, 5, 'Work-related', 'https://worktechinnovators.com', 'linda_work', 'linda_work_password'),
+(2, 10, 5, 'Social', 'https://socialinnovators.com', 'linda_social', 'linda_social_password'),
+(3, 10, 5, 'Entertainment', 'https://entertainmentinnovators.com', 'linda_entertainment', 'linda_entertainment_password'),
+(4, 10, 5, 'Work-related', 'https://workprojects.com', 'linda_projects', 'linda_projects_password'),
+(5, 15, 3, 'Work-related', 'https://workgreensolutions.com', 'joseph_work', 'joseph_work_password'),
+(6, 15, 3, 'Social', 'https://socialgreensolutions.com', 'joseph_social', 'joseph_social_password'),
+(7, 15, 3, 'Entertainment', 'https://entertainmentgreensolutions.com', 'joseph_entertainment', 'joseph_entertainment_password'),
+(8, 15, 3, 'Work-related', 'https://workfinancegurus.com', 'joseph_finance', 'joseph_finance_password'),
+(9, 7, 7, 'Work-related', 'https://workhealthcareheroes.com', 'michael_work', 'michael_work_password'),
+(10, 7, 7, 'Social', 'https://socialhealthcareheroes.com', 'michael_social', 'michael_social_password'),
+(11, 7, 7, 'Entertainment', 'https://entertainmenthealthcareheroes.com', 'michael_entertainment', 'michael_entertainment_password'),
+(12, 7, 7, 'Work-related', 'https://workheroesprojects.com', 'michael_projects', 'michael_projects_password'),
+(13, 22, 2, 'Work-related', 'https://workedutechpioneers.com', 'sandra_work', 'sandra_work_password'),
+(14, 22, 2, 'Social', 'https://socialedutechpioneers.com', 'sandra_social', 'sandra_social_password'),
+(15, 22, 2, 'Entertainment', 'https://entertainmentedutechpioneers.com', 'sandra_entertainment', 'sandra_entertainment_password'),
+(16, 22, 2, 'Work-related', 'https://workpioneersprojects.com', 'sandra_projects', 'sandra_projects_password'),
+(17, 18, 8, 'Work-related', 'https://worksustainableenergy.com', 'elizabeth_work', 'elizabeth_work_password'),
+(18, 18, 8, 'Social', 'https://socialsustainableenergy.com', 'elizabeth_social', 'elizabeth_social_password'),
+(19, 18, 8, 'Entertainment', 'https://entertainmentsustainableenergy.com', 'elizabeth_entertainment', 'elizabeth_entertainment_password'),
+(20, 18, 8, 'Work-related', 'https://workenergyprojects.com', 'elizabeth_projects', 'elizabeth_projects_password');
 
 
 
 ALTER SEQUENCE websites_id_seq RESTART WITH 1000;
 ALTER SEQUENCE organizations_id_seq RESTART WITH 2000;
 ALTER SEQUENCE users_id_seq RESTART WITH 5000;
-ALTER SEQUENCE categories_id_seq RESTART WITH 5000;
+--ALTER SEQUENCE categories_id_seq RESTART WITH 5000;
