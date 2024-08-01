@@ -3,6 +3,5 @@ $(document).ready(function() {
     console.log("button clicked");
     event.preventDefault();
 
-
   });
 });

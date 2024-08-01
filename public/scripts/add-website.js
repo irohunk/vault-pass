@@ -6,6 +6,13 @@ $(document).ready(function() {
     // console.log(event.target.elements);
     const {url, username, password} = event.target.elements;
     // console.log(url.value);
+
+    // check if the fields are MT
+    if (!url.value || !username.value || !password.value) {
+      $('#alert').slideDown();
+      return;
+    }
+
     const data = {
       url: url.value,
       username: username.value,
@@ -14,7 +21,7 @@ $(document).ready(function() {
     // console.log(data);
 
     $.ajax({
-      url:         '/new-pass',
+      url:         '/new',
       type:        'POST',
       data
     })
