@@ -5,7 +5,7 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
 const PORT = process.env.PORT || 8080;
 const app = express();
 
@@ -33,8 +33,8 @@ app.use(cookieParser());
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const websiteRoutes = require('./routes/website');
-const editWebsiteRoute = require('./routes/dashboad')
-const vaultPassesRoutes = require('./routes/new-pass');//newvaultpass-page
+const editWebsiteRoute = require('./routes/dashboad');
+const vaultPassesRoutes = require('./routes/new');//newvaultpass-page
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -44,7 +44,7 @@ app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/website', websiteRoutes);// added middleware
 app.use('/', editWebsiteRoute); // edit a specific website
-app.use('/new-pass', vaultPassesRoutes);
+app.use('/new', vaultPassesRoutes);
 
 const user = {
   name: 'Timmy',

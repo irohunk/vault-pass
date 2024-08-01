@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
   // use helper functions to get pass by ID
   helpers.getPasswordByUserId()
     .then(vaultPasses => {
-      res.render('new-pass', { vaultPasses: vaultPasses, user: res.locals.user });
+      res.render('new', { vaultPasses: vaultPasses, user: res.locals.user });
     })
     .catch(err => {
       res
@@ -47,6 +47,25 @@ router.get('/:id/edit', (req, res) => {
 
     });
 });
+
+router.post('/:id/edit', (req, res) => {
+  const editId = req.params.id;
+  const {url, username, password } = req.body;
+  console.log(req.body);
+
+
+  helpers.editVaultPass(url, username, password, editId)
+    .then(newVaultPass => {
+      res.json({message: 'vaultPass edited!', newVaultPass});
+    })
+    .catch(err => {
+      console.log(err);
+      res
+        .status(205)
+        .json({ error: err.message });
+    });
+});
+module.exports = router;
 
 router.post('/:id/edit', (req, res) => {
   const editId = req.params.id;

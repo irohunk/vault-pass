@@ -31,6 +31,9 @@
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
   <script defer src="/scripts/users.js"></script>
+  <!-- new create button  -->
+  <script defer src="/scripts/createBtn.js"></script>
+
 </head>
 
 
@@ -43,41 +46,46 @@
         <button class="logout-button" type="submit">Logout</button>
       </div>
   </nav>
-  <main class="website-list">
+  <!-- <main class="website-list">
     <h3 class="website-head">Your vaultPasses</h3>
 
-    <ul id="users"></ul>
+    <ul id="users"></ul> -->
   </main>
   <section>
-    <div>
+    <!-- <div>
       <form class="new-vaultpass" action="/website" method="POST">
         <input type="text" name="url" placeholder="Website URL">
         <input type="text" name="username" placeholder="Username">
         <input type="teixt" name="password" placeholder="Password">
         <button class="new-entry" type="submit">Create new VaultPass</button>
       </form>
-    </div>
+    </div> -->
     <!-- Displaying the list of websites (vaults) -->
     <div class="container mt-5">
       <h1>My Vaults</h1>
       <div class="row">
         <!-- Loop through the 'website' array passed from the server -->
-        <% website.forEach(vault => { %> <!-- 'website' is the array from the server -->
+        <% website.forEach(vault=> { %> <!-- 'website' is the array from the server -->
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
               <div class="card-body">
                 <!-- Display the website URL and username -->
-                <h5 class="card-title"><%= vault.url %></h5> 
-                <p class="card-text">Username: <%= vault.username %></p>
-                
+                <h5 class="card-title">
+                  <%= vault.url %>
+                </h5>
+                <p class="card-text">Username: <%= vault.username %>
+                </p>
+
                 <!-- Form to edit the website, redirects to POST /edit/:id -->
-                <form action="/edit/<%= vault.id %>" method="POST"> 
+                <form action="/edit/<%= vault.id %>" method="POST">
                   <button type="submit" class="btn btn-primary">Edit</button>
                 </form>
+                <!-- Create redirect button for homepage -->
+                <button id="createBtn">Create</button>
               </div>
             </div>
           </div>
-        <% }) %> <!-- End of the loop -->
+          <% }) %> <!-- End of the loop -->
       </div>
     </div>
   </section>

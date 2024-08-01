@@ -43,7 +43,7 @@ const getPasswordByUserId = function(id) {
   `;
   return db.query(query, [id])
     .then(data => {
-      res.json(data.rows[0]);
+      return (data.rows);
     })
     .catch(error => {
       console.log("error", error);
