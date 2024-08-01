@@ -8,6 +8,11 @@ INSERT INTO organizations (id, name, city, street, country, postal) VALUES
 (7, 'Global Logistics Co.', 'Singapore', '404 Trade Ln', 'Singapore', '049319'),
 (8, 'Sustainable Energy Corp.', 'Copenhagen', '505 Eco Blvd', 'Denmark', '2100');
 
+INSERT INTO categories (id, cat_name) VALUES
+(1, 'Work Related'),
+(2, 'Social'),
+(3, 'Entertainment');
+
 INSERT INTO users (id, name, org_id, is_admin, login_username, login_password) VALUES
 (1, 'Paul', 5, 1, 'paul_username', 'paul_password'),
 (2, 'Mary', 3,  0, 'mary_username', 'mary_password'),
@@ -37,14 +42,17 @@ INSERT INTO users (id, name, org_id, is_admin, login_username, login_password) V
 
 
 
-INSERT INTO websites (id, user_id, org_id, url, username, password) VALUES
-(1, 10, 5, 'https://techinnovators.com', 'linda_website', 'linda_web_password'),
-(2, 15, 3, 'https://greensolutions.com', 'joseph_website', 'joseph_web_password'),
-(3, 7, 7, 'https://healthcareheroes.com', 'michael_website', 'michael_web_password'),
-(4, 22, 2, 'https://edutechpioneers.com', 'sandra_website', 'sandra_web_password'),
-(5, 18, 8, 'https://financegurus.com', 'elizabeth_website', 'elizabeth_web_password'),
-(6, 18, 8, 'https://financegurus.com', 'please_work', 'elizabeth_web_password');
+INSERT INTO websites (id, user_id, org_id, cat_id, url, username, password) VALUES
+(1, 10, 5, 1, 'https://techinnovators.com', 'linda_website', 'linda_web_password'),
+(2, 15, 3, 2, 'https://greensolutions.com', 'joseph_website', 'joseph_web_password'),
+(3, 7, 7, 3, 'https://healthcareheroes.com', 'michael_website', 'michael_web_password'),
+(4, 22, 2, 2, 'https://edutechpioneers.com', 'sandra_website', 'sandra_web_password'),
+(5, 18, 8, 3, 'https://financegurus.com', 'elizabeth_website', 'elizabeth_web_password'),
+(6, 18, 8, 1, 'https://financegurus.com', 'please_work', 'elizabeth_web_password');
 
-ALTER SEQUENCE websites_id_seq RESTART WITH 10;
-ALTER SEQUENCE organizations_id_seq RESTART WITH 20;
-ALTER SEQUENCE users_id_seq RESTART WITH 50;
+
+
+ALTER SEQUENCE websites_id_seq RESTART WITH 1000;
+ALTER SEQUENCE organizations_id_seq RESTART WITH 2000;
+ALTER SEQUENCE users_id_seq RESTART WITH 5000;
+ALTER SEQUENCE categories_id_seq RESTART WITH 5000;

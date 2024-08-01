@@ -32,4 +32,21 @@ const getWebsiteByUserId = (userId) => {
     });
 };
 
-module.exports = { getWebsiteById, getWebsiteByUserId }
+const deleteWebsiteById = (id) => {
+  const query = `
+  DELETE FROM websites
+  WHERE id = $1;
+  `;
+
+  return db.query(query, [id])
+    .then(() => {
+      console.log('Website deleted with ID:', id);
+    })
+    .catch(error => {
+      console.log('Error deleting website by ID:', error);
+      throw error;
+    });
+};
+
+
+module.exports = { getWebsiteById, getWebsiteByUserId, deleteWebsiteById }

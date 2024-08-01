@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {getWebsiteById, getWebsiteByUserId} = require('../db/queries/dashboardHelpers');
+const {getWebsiteById, getWebsiteByUserId, deleteWebsiteById} = require('../db/queries/dashboardHelpers');
 
 
 router.post('/', (req, res) => {
@@ -27,6 +27,18 @@ router.post('/', (req, res) => {
   });
 })
 
+router.post('/:id/delete', (req, res) => {
+  const websiteId = req.params.id;
+
+  deleteWebsiteById(websiteId)
+    .then(() => {
+      res.redirect('/');
+    })
+    .catch(error => {
+      console.error('Error deleting website:', error);
+      res.status(500).send('Server Error');
+    });
+});
 
 // route to get websites for a specific user and to throw it onto the main page
 router.get('/', (req, res) => {
