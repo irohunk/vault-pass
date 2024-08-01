@@ -26,11 +26,15 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/newPass.css">
+  <link rel="stylesheet" href="/styles/drop-menu.css">
+  <link rel="stylesheet" href="/styles/generate.css">
 
   <!--- App JS --->
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/add-website.js"></script>
   <script defer src="/scripts/password-generator.js"></script>
+  <script defer src="/scripts/dropdown.js"></script>
+  <!-- <script defer src="/scripts/new.js"></script> -->
 </head>
 
 <body>
@@ -45,6 +49,9 @@
   </main>
   <section>
     <div>
+      <div id="alert">
+        <p>⚠️Please fill out the fields⚠️</p>
+      </div>
       <form id="new-pass" class="new-vaultpass" action="/new-pass" method="POST">
         <input type="text" name="url" placeholder="Website URL">
         <input type="text" name="username" placeholder="Username">
@@ -54,6 +61,7 @@
       <div>
         <button type="button" id="generate-password">Generate VaultPassword</button>
       </div>
+      <div id="dropdownContainer"></div>
     </div>
   </section>
 </body>

@@ -1,0 +1,34 @@
+button#generate-password {
+  font-family: 'Bungee Spice', sans-serif;
+  /* margin-left: 25.4em; */
+  margin-top: 1.1em;
+  float: right;
+}
+
+button.dropdown-toggle {
+  font-family: 'Bungee Spice', sans-serif;
+  margin-top: 1.1em;
+}
+
+#alert {
+  background-color: rgba(255, 0, 55, 0.824);
+  padding: 0px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: none;
+
+}
+
+p {
+  display: flex;
+  justify-content: center;
+}
+
+select#categories.dropdown-toggle {
+  font-family: 'Bungee Spice', sans-serif;
+  margin-top: 1.1em;
+}
+
+label {
+  font-family: 'Bungee Spice', sans-serif;
+}

@@ -31,6 +31,10 @@
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
   <script defer src="/scripts/users.js"></script>
+  <!-- new create button  -->
+  <script defer src="/scripts/createBtn.js"></script>
+  <script defer src="/scripts/copyBtn.js"></script>
+
 </head>
 
 
@@ -46,11 +50,11 @@
   <main class="website-list">
     <!-- <h3 class="website-head">Your vaultPasses</h3> -->
 
-    <ul id="users"></ul>
+    <ul id="users"></ul> -->
   </main>
   <section>
     <div>
-        <!-- CATEGORIES GOES HERE -->
+      <!-- CATEGORIES GOES HERE -->
 
     </div>
     <!-- Displaying the list of websites (vaults) -->
@@ -64,16 +68,23 @@
           <a href="/?category=Work-related">Work Related</a>
         </div>
         <!-- Loop through the 'website' array passed from the server -->
-        <% website.forEach(vault => { %> <!-- 'website' is the array from the server -->
+        <% website.forEach(vault=> { %> <!-- 'website' is the array from the server -->
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
               <div class="card-body">
                 <!-- Display the website URL and username -->
-                <h5 class="card-title"><%= vault.url %></h5> 
-                <p class="card-text">Username: <%= vault.username %></p>
-                
+                <h5 class="card-title">
+                  <%= vault.url %>
+                </h5>
+                <label class="card-text">Username:</label>
+                <input id="username" class="username" value="<%= vault.username %>" disabled />
+                <label class="card-text">Password:</label>
+                <input type="password" class="password" value="<%= vault.password %>" disabled />
+
+
+
                 <!-- Form to edit the website, redirects to POST /edit/:id -->
-                <form action="/edit/<%= vault.id %>" method="POST"> 
+                <form action="/edit/<%= vault.id %>" method="POST">
                   <button type="submit" class="btn btn-primary">Edit</button>
                 </form>
                 <form action="/<%= vault.id %>/delete" method="POST" style="display: inline;">
@@ -82,8 +93,9 @@
               </div>
             </div>
           </div>
-        <% }) %> <!-- End of the loop -->
+          <% }) %> <!-- End of the loop -->
       </div>
+      <button id="createBtn">Create</button>
     </div>
   </section>
 </body>
