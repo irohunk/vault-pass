@@ -1,26 +1,31 @@
-body,
 html {
-  margin: 0;
+  box-sizing: border-box;
 }
 
-.main-edit-container {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-.edit-container {
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  justify-content: space-evenly;
+body {
+  font-family: "Nanum Gothic Coding", monospace;
+  font-weight: 700;
+  font-size: 20px;
 }
 
-.password-container {
-  display: flex;
-  flex-direction: column;
+.nanum-gothic-coding-bold {
+  font-family: "Nanum Gothic Coding", monospace;
+  font-weight: 700;
+  font-style: normal;
 }
 
-.update-cancel-container {
-  display: flex;
+.nanum-gothic-coding-regular {
+  font-family: "Nanum Gothic Coding", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+main {
+  width: 90%;
+  margin: 0 auto;
+  background-color: inherit;
 }

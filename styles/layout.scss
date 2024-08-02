@@ -1,29 +1,37 @@
 // See: https://sass-lang.com/
 
-body,
+// body,
+// html {
+//   margin: 0;
+// }
+
 html {
-  margin: 0;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-.main-edit-container {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
+body {
+  font-family: "Nanum Gothic Coding", monospace;
+  font-weight: 700;
+  font-size: 20px;
 }
 
-.edit-container {
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  justify-content: space-evenly;
+.nanum-gothic-coding-bold {
+  font-family: "Nanum Gothic Coding", monospace;
+  font-weight: 700;
+  font-style: normal;
 }
 
-.password-container {
-  display: flex;
-  flex-direction: column;
+.nanum-gothic-coding-regular {
+  font-family: "Nanum Gothic Coding", monospace;
+  font-weight: 400;
+  font-style: normal;
 }
 
-
-.update-cancel-container {
-  display: flex;
+main {
+  width: 90%;
+  margin: 0 auto;
+  background-color: inherit;
 }

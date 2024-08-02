@@ -17,6 +17,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Spice&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- NAV CSS -->
   <link rel="stylesheet" href="/styles/nav.css">
@@ -26,6 +27,7 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/newPass.css">
+  <link rel="stylesheet" href="/styles/dashboard.css">
 
   <!--- App JS --->
   <script src="/vendor/jquery-3.0.0.js"></script>
@@ -42,11 +44,11 @@
 <body>
   <nav>
     <%- include('partials/_header') %>
-      <span class="vaultPass-header">VaultPass</span>
+      <!-- <span class="vaultPass-header">VaultPass</span>
       <div class="username-head">USERNAME</div>
       <div class="logout-button">
         <button class="logout-button" type="submit">Logout</button>
-      </div>
+      </div> -->
   </nav>
   <main class="website-list">
     <!-- <h3 class="website-head">Your vaultPasses</h3> -->
@@ -62,17 +64,17 @@
     <div class="container mt-5">
       <h1>My Vaults</h1>
       <div class="row">
-        <div>
+        <div class="category-buttons">
           <a href="/">View All</a>
           <a href="/?category=Social">Social</a>
           <a href="/?category=Entertainment">Entertainment</a>
           <a href="/?category=Work-related">Work Related</a>
         </div>
         <!-- Loop through the 'website' array passed from the server -->
+        <div class="website-card">
         <% website.forEach(vault=> { %> <!-- 'website' is the array from the server -->
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-              <div class="card-body">
+          <div class="card">
+            <div class="card-body">
                 <!-- Display the website URL and username -->
                 <h5 class="card-title">
                   <%= vault.url %>
@@ -99,12 +101,15 @@
                 <button type="button" class="copy-password">Copy password</button>
               </div>
             </div>
-          </div>
+          
           <% }) %> <!-- End of the loop -->
       </div>
-      <button id="createBtn">Create</button>
+        </div>
+      <!-- <button id="createBtn">Create</button> -->
     </div>
+  </div>
   </section>
+  <script src="/public/scripts/singleWebsiteCard.js"></script>
 </body>
 
 

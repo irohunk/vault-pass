@@ -1,0 +1,121 @@
+.card {
+  border: 2px solid #ff4500; /* Optional: Add a border for the card */
+  background-color: #1a1a2e; /* Background color for the card */
+  color: #ffffff; /* Text color */
+  border-radius: 10px; /* Rounded corners */
+  padding: 15px; /* Padding inside the card */
+  margin-bottom: 20px; /* Space between cards */
+}
+
+.card h5 {
+  font-family: 'Nanum Gothic Coding', monospace;
+  font-weight: 700;
+  font-size: 1.5em; /* Adjust the size of the URL text */
+  color: #ffa500; /* Optional: Make the URL text stand out */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between elements */
+}
+
+.card .btn {
+  margin-right: 10px; /* Space between buttons */
+}
+
+.website-card {
+  display: flex;
+  flex-wrap: wrap; /* Wrap cards to the next line */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center the cards horizontally */
+  padding-bottom: 20px; /* Optional: Add padding at the bottom for spacing */
+}
+
+.website-card .card {
+  flex: 1 1 calc(25% - 40px); /* Four cards per row, with gaps accounted for */
+  max-width: calc(25% - 40px); /* Set a maximum width for each card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for better visual separation */
+  margin: 10px; /* Space around each card */
+  background-color: #1a1a2e; /* Background color for the card */
+  border-radius: 10px; /* Rounded corners */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures content is evenly distributed */
+}
+
+.website-card .card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1em;
+}
+
+.card input {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.card .btn {
+  margin-top: 10px;
+  width: 100%;
+}
+
+h1 {
+  font-family: "Bungee Spice", sans-serif; 
+}
+
+/* General button styling */
+.category-buttons a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #ff4500; /* Background color */
+  color: #ffffff; /* Text color */
+  text-decoration: none;
+  font-family: 'Nanum Gothic Coding', monospace;
+  font-weight: 700;
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect */
+.category-buttons a:hover {
+  background-color: #ffa500; /* Lighter shade for hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+  color: #000000; /* Change text color on hover */
+}
+
+/* Active/Selected state */
+.category-buttons a.active {
+  background-color: #32cd32; 
+  color: #ffffff;
+  transform: scale(1.1); 
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap; 
+  margin-top: 20px;
+}
+
+/* Responsive behavior */
+@media (max-width: 600px) {
+  .category-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+}
