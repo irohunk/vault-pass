@@ -1,0 +1,56 @@
+.main-edit-container {
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+  margin-left: 100px;
+  margin-bottom: 250px;
+  align-items: center;
+}
+
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 300px;
+  justify-content: space-evenly;
+  float: right;
+}
+
+
+.password-container {
+  display: flex;
+  flex-direction: row;
+  width: 620px;
+  margin-right: 75px;
+  justify-content: space-between;
+}
+
+.passTextArea {
+  width: 400px;
+}
+
+.generatePassButton {
+  width: 200px;
+  /* padding: 4px; */
+  border-radius: 8px;
+  font-family: "Bungee spice", sans-serif;
+  background: black;
+}
+
+
+.update-cancel-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 400px;
+  margin-right: 50px;
+  position: fixed;
+  bottom: 400px;
+}
+
+.new-entry {
+  padding: 4px;
+  border-radius: 8px;
+  font-family: "Bungee spice", sans-serif;
+  background: black;
+}
