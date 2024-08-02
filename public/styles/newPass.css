@@ -17,6 +17,16 @@ button#cancelBtn {
   float: right;
 }
 
-#username-field {
+#url-field {
   margin-top: 73px;
+}
+
+.fields {
+  padding: 6px;
+}
+
+.buttons {
+  padding: 4px;
+  border-radius: 8px;
+  font-family: "Bungee spice", sans-serif;
 }

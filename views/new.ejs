@@ -49,16 +49,16 @@
       </div>
       <form id="new-pass" class="new-vaultpass" action="/new-pass" method="POST">
         <div class="container-edit">
-          <input type="text" name="url" placeholder="Website URL">
           <div id="dropdownContainer"></div>
+          <input id="url-field" class="fields" type="text" name="url" placeholder="Website URL">
           <br>
-          <input id="username-field" type="text" name="username" placeholder="Username">
+          <input class="fields" type="text" name="username" placeholder="Username">
           <br>
-          <input type="text" name="password" placeholder="Password">
+          <input class="fields" type="text" name="password" placeholder="Password">
           <br>
-          <button type="button" id="generate-password">Generate VaultPassword</button>
+          <button class="buttons" type="button" id="generate-password">Generate VaultPassword</button>
           <br>
-          <button class="new-entry" type="submit">Create new VaultPass</button>
+          <button class="buttons" type="submit">Create new VaultPass</button>
           <div id="cancel-button"></div>
       </form>
     </div>
