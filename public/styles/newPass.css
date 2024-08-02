@@ -16,3 +16,7 @@ button#cancelBtn {
   margin-right: -143px;
   float: right;
 }
+
+#username-field {
+  margin-top: 73px;
+}
