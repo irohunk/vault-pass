@@ -39,12 +39,7 @@
 
 <body>
   <nav>
-    <!-- <%- include('partials/_header') %> -->
-    <span class="vaultPass-header">VaultPass</span>
-    <div class="username-head">USERNAME</div>
-    <div class="logout-button">
-      <button class="logout-button" type="submit">Logout</button>
-    </div>
+    <%- include('partials/_header') %>
   </nav>
   </main>
   <section>
@@ -53,16 +48,22 @@
         <p>⚠️Please fill out the fields⚠️</p>
       </div>
       <form id="new-pass" class="new-vaultpass" action="/new-pass" method="POST">
-        <input type="text" name="url" placeholder="Website URL">
-        <input type="text" name="username" placeholder="Username">
-        <input type="text" name="password" placeholder="Password">
-        <button class="new-entry" type="submit">Create new VaultPass</button>
+        <div class="container-edit">
+          <input type="text" name="url" placeholder="Website URL">
+          <div id="dropdownContainer"></div>
+          <br>
+          <input type="text" name="username" placeholder="Username">
+          <br>
+          <input type="text" name="password" placeholder="Password">
+          <br>
+          <button type="button" id="generate-password">Generate VaultPassword</button>
+          <br>
+          <button class="new-entry" type="submit">Create new VaultPass</button>
+          <div id="cancel-button"></div>
       </form>
-      <div>
-        <button type="button" id="generate-password">Generate VaultPassword</button>
-      </div>
-      <div id="cancel-button"></div>
-      <div id="dropdownContainer"></div>
+    </div>
+    </div>
+
     </div>
   </section>
 </body>

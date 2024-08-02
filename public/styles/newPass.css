@@ -6,3 +6,13 @@ section {
 button.new-entry {
   font-family: 'Bungee spice', sans-serif;
 }
+
+div.container-edit {
+  display: flex;
+  flex-direction: column;
+}
+
+button#cancelBtn {
+  margin-right: -143px;
+  float: right;
+}

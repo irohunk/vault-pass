@@ -1,6 +1,5 @@
 $(document).ready(function() {
   $('#createBtn').click(function(event) {
-    // console.log('button clicked');
     event.preventDefault();
 
     $.ajax({
