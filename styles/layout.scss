@@ -4,3 +4,26 @@ body,
 html {
   margin: 0;
 }
+
+.main-edit-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.edit-container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-evenly;
+}
+
+.password-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.update-cancel-container {
+  display: flex;
+}
