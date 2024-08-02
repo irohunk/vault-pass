@@ -38,7 +38,6 @@ const copyPassword = function(target) {
     document.execCommand('copy');
   }
 
-  alert("copied password");
 };
 
 $(document).ready(function() {

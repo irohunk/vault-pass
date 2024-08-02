@@ -32,3 +32,14 @@ select#categories.dropdown-toggle {
 label {
   font-family: 'Bungee Spice', sans-serif;
 }
+
+#cancel-button {
+  float: right;
+  margin: righ;
+  margin-right: 144px;
+  margin-top: 23px;
+}
+
+div.dropdown {
+  margin-top: 25px;
+}
