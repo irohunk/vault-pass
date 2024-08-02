@@ -20,7 +20,7 @@
 .password-container {
   display: flex;
   flex-direction: row;
-  width: 620px;
+  width: 700px;
   margin-right: 75px;
   justify-content: space-between;
 }
@@ -30,7 +30,7 @@
 }
 
 .generatePassButton {
-  width: 200px;
+  width: 270px;
   /* padding: 4px; */
   border-radius: 8px;
   font-family: "Bungee spice", sans-serif;
