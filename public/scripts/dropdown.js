@@ -17,7 +17,6 @@ $(document).ready(function() {
 
   // add the click event for the dropdown
   $('.dropdown-toggle').click(function(event) {
-    console.log('button clicked');
     event.preventDefault();
     $(event.currentTarget).next('.drop-menu').toggleClass('show');
   });

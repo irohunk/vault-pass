@@ -8,29 +8,12 @@
 const express = require('express');
 const router  = express.Router();
 const helpers = require('../db/queries/helpers');
-// const sequelize = require('sequelize');
-// const sequelize = require('sequelize');
 
 router.get('/', (req, res) => {
   helpers.getPasswordByUserId(5).then(users => {
     res.json(users);
-  });// call res.render when ready
+  });
 });
-
-// const Vault = sequelize.define('Vault', {
-//   websiteUrl: {
-//     type: DataTypes.STRING,
-//     allowNull: false
-//   },
-//   username: {
-//     type: DataTypes.STRING,
-//     allowNull: false
-//   },
-//   password: {
-//     type: DataTypes.STRING,
-//     allowNull: false
-//   }
-// });
 
 router.get('/websites', async(req, res) => {
   const vaults = await Vault.findAll();

@@ -15,11 +15,8 @@ const copyToClipboard = function(target) {
 
 $(document).ready(function() {
   $('.copy-username').click(function(event) {
-    console.log("button clicked");
     copyToClipboard(this);
-
   });
-
 });
 
 const copyPassword = function(target) {
@@ -37,16 +34,15 @@ const copyPassword = function(target) {
     $input.select();
     document.execCommand('copy');
   }
-
 };
+
 
 $(document).ready(function() {
   $('.copy-password').click(function(event) {
-    console.log("button clicked");
     copyPassword(this);
-
   });
-
 });
+
+
 
 
