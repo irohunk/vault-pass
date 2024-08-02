@@ -41,55 +41,31 @@ INSERT INTO users (id, name, org_id, is_admin, login_username, login_password) V
 (25, 'Joshua', 1, 1, 'joshua_username', 'joshua_password');
 
 
-
-<<<<<<< HEAD
 INSERT INTO websites (id, user_id, org_id, category, url, username, password) VALUES
 (1, 10, 5, 'Work-related', 'https://worktechinnovators.com', 'linda_work', 'linda_work_password'),
 (2, 10, 5, 'Social', 'https://socialinnovators.com', 'linda_social', 'linda_social_password'),
 (3, 10, 5, 'Entertainment', 'https://entertainmentinnovators.com', 'linda_entertainment', 'linda_entertainment_password'),
 (4, 10, 5, 'Work-related', 'https://workprojects.com', 'linda_projects', 'linda_projects_password'),
+
 (5, 15, 3, 'Work-related', 'https://workgreensolutions.com', 'joseph_work', 'joseph_work_password'),
 (6, 15, 3, 'Social', 'https://socialgreensolutions.com', 'joseph_social', 'joseph_social_password'),
 (7, 15, 3, 'Entertainment', 'https://entertainmentgreensolutions.com', 'joseph_entertainment', 'joseph_entertainment_password'),
 (8, 15, 3, 'Work-related', 'https://workfinancegurus.com', 'joseph_finance', 'joseph_finance_password'),
+
 (9, 7, 7, 'Work-related', 'https://workhealthcareheroes.com', 'michael_work', 'michael_work_password'),
 (10, 7, 7, 'Social', 'https://socialhealthcareheroes.com', 'michael_social', 'michael_social_password'),
 (11, 7, 7, 'Entertainment', 'https://entertainmenthealthcareheroes.com', 'michael_entertainment', 'michael_entertainment_password'),
 (12, 7, 7, 'Work-related', 'https://workheroesprojects.com', 'michael_projects', 'michael_projects_password'),
+
 (13, 22, 2, 'Work-related', 'https://workedutechpioneers.com', 'sandra_work', 'sandra_work_password'),
 (14, 22, 2, 'Social', 'https://socialedutechpioneers.com', 'sandra_social', 'sandra_social_password'),
 (15, 22, 2, 'Entertainment', 'https://entertainmentedutechpioneers.com', 'sandra_entertainment', 'sandra_entertainment_password'),
 (16, 22, 2, 'Work-related', 'https://workpioneersprojects.com', 'sandra_projects', 'sandra_projects_password'),
+
 (17, 18, 8, 'Work-related', 'https://worksustainableenergy.com', 'elizabeth_work', 'elizabeth_work_password'),
 (18, 18, 8, 'Social', 'https://socialsustainableenergy.com', 'elizabeth_social', 'elizabeth_social_password'),
 (19, 18, 8, 'Entertainment', 'https://entertainmentsustainableenergy.com', 'elizabeth_entertainment', 'elizabeth_entertainment_password'),
 (20, 18, 8, 'Work-related', 'https://workenergyprojects.com', 'elizabeth_projects', 'elizabeth_projects_password');
-
-
-=======
-INSERT INTO websites (id, user_id, org_id, category, url, username, password) VALUES
-(1, 10, 5, 'Work-Related', 'https://worktechinnovators.com', 'linda_work', 'linda_work_password'),
-(2, 10, 5, 'Social', 'https://socialinnovators.com', 'linda_social', 'linda_social_password'),
-(3, 10, 5, 'Entertainment', 'https://entertainmentinnovators.com', 'linda_entertainment', 'linda_entertainment_password'),
-(4, 10, 5, 'Work-Related', 'https://workprojects.com', 'linda_projects', 'linda_projects_password'),
-
-(5, 15, 3, 'Work-Related', 'https://workgreensolutions.com', 'joseph_work', 'joseph_work_password'),
-(6, 15, 3, 'Social', 'https://socialgreensolutions.com', 'joseph_social', 'joseph_social_password'),
-(7, 15, 3, 'Entertainment', 'https://entertainmentgreensolutions.com', 'joseph_entertainment', 'joseph_entertainment_password'),
-(8, 15, 3, 'Work-Related', 'https://workfinancegurus.com', 'joseph_finance', 'joseph_finance_password'),(9, 7, 7, 'Work-Related', 'https://workhealthcareheroes.com', 'michael_work', 'michael_work_password'),
-(10, 7, 7, 'Social', 'https://socialhealthcareheroes.com', 'michael_social', 'michael_social_password'),
-(11, 7, 7, 'Entertainment', 'https://entertainmenthealthcareheroes.com', 'michael_entertainment', 'michael_entertainment_password'),
-(12, 7, 7, 'Work-Related', 'https://workheroesprojects.com', 'michael_projects', 'michael_projects_password'),
-
-(13, 22, 2, 'Work-Related', 'https://workedutechpioneers.com', 'sandra_work', 'sandra_work_password'),
-(14, 22, 2, 'Social', 'https://socialedutechpioneers.com', 'sandra_social', 'sandra_social_password'),
-(15, 22, 2, 'Entertainment', 'https://entertainmentedutechpioneers.com', 'sandra_entertainment', 'sandra_entertainment_password'),
-(16, 22, 2, 'Work-Related', 'https://workpioneersprojects.com', 'sandra_projects', 'sandra_projects_password'),
-
-(17, 18, 8, 'Work-Related', 'https://worksustainableenergy.com', 'elizabeth_work', 'elizabeth_work_password'),
-(18, 18, 8, 'Social', 'https://socialsustainableenergy.com', 'elizabeth_social', 'elizabeth_social_password'),
-(19, 18, 8, 'Entertainment', 'https://entertainmentsustainableenergy.com', 'elizabeth_entertainment', 'elizabeth_entertainment_password'),
-(20, 18, 8, 'Work-Related', 'https://workenergyprojects.com', 'elizabeth_projects', 'elizabeth_projects_password');
 
 
 ALTER SEQUENCE websites_id_seq RESTART WITH 1000;

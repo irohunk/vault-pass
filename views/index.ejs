@@ -31,6 +31,7 @@
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
   <script defer src="/scripts/users.js"></script>
+  <script defer src="/routes/edit.js"></script>
   <!-- new create button  -->
   <script defer src="/scripts/createBtn.js"></script>
   <script defer src="/scripts/copyBtn.js"></script>
@@ -50,7 +51,7 @@
   <main class="website-list">
     <!-- <h3 class="website-head">Your vaultPasses</h3> -->
 
-    <ul id="users"></ul> -->
+    <ul id="users"></ul>
   </main>
   <section>
     <div>
@@ -84,9 +85,10 @@
 
 
                 <!-- Form to edit the website, redirects to POST /edit/:id -->
-                <form action="/edit/<%= vault.id %>" method="POST">
+                
+                <a href="/<%= vault.id %>/edit">
                   <button type="submit" class="btn btn-primary">Edit</button>
-                </form>
+                </a>
                 <form action="/<%= vault.id %>/delete" method="POST" style="display: inline;">
                   <button type="submit" class="btn btn-danger">Delete</button>
                 </form>

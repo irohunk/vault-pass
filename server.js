@@ -37,6 +37,7 @@ const homepageRoute = require('./routes/dashboad');
 const deleteWebsite = require('./routes/dashboad');
 const editWebsiteRoute = require('./routes/dashboad');
 const vaultPassesRoutes = require('./routes/new');//newvaultpass-page
+const editPasswordRoute = require('./routes/edit')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -50,6 +51,8 @@ app.use('/', homepageRoute); // edit a specific website
 app.use('/', deleteWebsite); //delete button?
 app.use('/', editWebsiteRoute); // edit a specific website
 app.use('/new', vaultPassesRoutes);
+app.use('/', editPasswordRoute); // edit a specific website
+
 
 const user = {
   name: 'Timmy',

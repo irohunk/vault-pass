@@ -45,14 +45,21 @@
   </main>
   <section>
     <div>
-      <form id="edit-pass" class="new-vaultpass" action="/new-pass/<%= existingPassword.id %>/edit" method="POST">
+      <form id="edit-pass" class="new-vaultpass" action="/<%= existingPassword.id %>/edit" method="POST">
+        <!-- <label for="category">Category:</label> -->
+          <select id="category" name="category">
+            <% categories.forEach(category => { %>
+              <option value="<%= category %>" <%= (existingPassword.category === category) ? 'selected' : null %>><%= category %></option>
+            <% }); %>
+          </select>
         <input value="<%= existingPassword.url %>" type="text" name="url" placeholder="Website URL">
         <input value="<%= existingPassword.username %>" type="text" name="username" placeholder="Username">
         <input value="<%= existingPassword.password %>" type="text" name="password" placeholder="Password">
-        <button class="new-entry" type="submit">Create new VaultPass</button>
+        <button class="new-entry" type="submit">Update VaultPass</button>
+        <button id="cancel" class="new-entry" type="button">Cancel</button>
       </form>
       <div>
-        <button type="button" id="generate-password">Generate VaultPassword</button>
+        <button type="button" id="generate-password">Generate Password</button>
       </div>
     </div>
   </section>
